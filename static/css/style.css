@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #161616;
+    overflow: hidden;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.brand {
+    font-size: 1.5em;
+    color: rgb(238, 232, 232);
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 15px;
+}
+
+.nav-list a {
+    color: rgb(238, 232, 232);
+    text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+body {
+        background-image: url('');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+}

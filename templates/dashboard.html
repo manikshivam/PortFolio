@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="static/css/dash.css">
+    <style>
+        body {
+          background-image: url('https://preview.redd.it/exzhbfejs1pa1.jpg?vthumb=1&s=fbfbddfb4696a4b69c1e495ae937ff3e374c2d49');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        </style> 
+</head>
+<body>
+
+    <div class="container">
+        <h2>Dashboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Date</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                    <tr>
+                        <td>{{ message.id }}</td>
+                        <td>{{ message.name }}</td>
+                        <td>{{ message.email }}</td>
+                        <td>{{ message.mobile }}</td>
+                        <td>{{ message.date }}</td>
+                        <td class="message-text">{{ message.message }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_entry', message_id=message.id) }}" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="/" class="logout-link">Logout</a>
+    </div>
+</body>
+</html>
